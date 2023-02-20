@@ -7,9 +7,9 @@ public class Currency {
 		this.value = value;
 	}
 
-	public Currency(long rub, int cop) {
-		if(0 <= cop && cop < 100 && rub >= 0) {
-			this.value = rub * 100 + cop;
+	public Currency(long rub, int kop) {
+		if(0 <= kop && kop < 100 && rub >= 0) {
+			this.value = rub * 100 + kop;
 		} else {
 			throw new IllegalArgumentException();
 		}
@@ -19,7 +19,7 @@ public class Currency {
 		return value / 100;
 	}
 
-	public long getCop() {
+	public long getKop() {
 		return value % 100;
 	}
 
@@ -33,6 +33,6 @@ public class Currency {
 
 	@Override
 	public String toString() {
-		return getRub() + " руб. " + getCop() + " коп.";
+		return getRub() + " руб. " + getKop() + " коп.";
 	}
 }
