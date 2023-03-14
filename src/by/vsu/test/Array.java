@@ -24,12 +24,6 @@ public class Array {
 		values = tmp;
 	}
 
-	private void test() {
-		for(Product value : values) {
-			System.out.println(value);
-		}
-	}
-
 	public int size() {
 		return values.length;
 	}
