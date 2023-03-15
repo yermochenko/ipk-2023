@@ -4,14 +4,46 @@ import by.vsu.domain.Category;
 import by.vsu.domain.Currency;
 import by.vsu.domain.Product;
 
+//class CoffeeMaker {
+//	void doCoffee() {
+//		System.out.println("Делаем паршивый кофе, но он поможет нам проснуться");
+//	}
+//	void askResult() {
+//		System.out.println("Действительно паршивый! :(");
+//	}
+//}
+//
+//class CappuccinoMaker extends CoffeeMaker {
+//	void doCoffee() {
+//		System.out.println("Делаем очень вкусный капучино");
+//	}
+//	void askResult() {
+//		System.out.println("Классный кофе! :D");
+//	}
+//}
+//
 public class Main {
-	public static void out(Array products) {
+	public static void out(Array<?> products) {
 		for(int i = 0; i < products.size(); i++) {
 			System.out.println(products.get(i));
 		}
 	}
+
+//	public static void tryToWakeUp(CoffeeMaker coffeeMaker) {
+//		System.out.println("Надо заварить кофе...");
+//		coffeeMaker.doCoffee();
+//		System.out.println("Выпили кофе...");
+//		coffeeMaker.askResult();
+//		System.out.println("Проснулись!...");
+//	}
+
 	public static void main(String[] args) {
-		Array products = new Array();
+//		System.out.println("******************");
+//		tryToWakeUp(new CoffeeMaker());
+//		System.out.println("******************");
+//		tryToWakeUp(new CappuccinoMaker());
+
+		Array<Product> products = new Array<>();
 		products.debug();
 
 		Category category1 = new Category();

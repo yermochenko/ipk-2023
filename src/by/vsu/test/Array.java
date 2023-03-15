@@ -1,34 +1,33 @@
 package by.vsu.test;
 
-import by.vsu.domain.Product;
-
-public class Array {
+public class Array<T> {
 	public static final int DEFAULT_SIZE = 2;
-	private Product[] values;
+	private Object[] values;
 	private int size;
 
 	public Array() {
-		values = new Product[DEFAULT_SIZE];
+		values = new Object[DEFAULT_SIZE];
 	}
 
 	public Array(int size) {
-		values = new Product[size];
+		values = new Object[size];
 		this.size = size;
 	}
 
-	public Product get(int index) {
+	@SuppressWarnings("unchecked")
+	public T get(int index) {
 		check(index);
-		return values[index];
+		return (T)values[index];
 	}
 
-	public void set(int index, Product value) {
+	public void set(int index, T value) {
 		check(index);
 		values[index] = value;
 	}
 
-	public void add(Product value) {
+	public void add(T value) {
 		if(size == values.length) {
-			Product[] tmp = new Product[calcNextSize()];
+			Object[] tmp = new Object[calcNextSize()];
 			System.arraycopy(values, 0, tmp, 0, size);
 			values = tmp;
 		}
