@@ -11,7 +11,8 @@ public class Main {
 		}
 	}
 	public static void main(String[] args) {
-		Array products = new Array(0);
+		Array products = new Array();
+		products.debug();
 
 		Category category1 = new Category();
 		category1.setName("Молочная продукция");
@@ -19,14 +20,20 @@ public class Main {
 		category2.setName("Мясная продукция");
 
 		products.add(new Product("Молоко", new Currency(2L, 87), category1));
+		products.debug();
 		products.add(new Product("Рулька", new Currency(16L, 76)));
 		products.get(products.size() - 1).setCategory(category2);
+		products.debug();
 		products.add(new Product("Творог", new Currency(3L, 33), category1));
+		products.debug();
 
 		System.out.println("***********************");
 		out(products);
 
 		products.add(new Product("Салями", new Currency(4L, 74), category2));
+		products.debug();
+		products.add(new Product("Сыр", new Currency(35L, 32), category1));
+		products.debug();
 
 		System.out.println("***********************");
 		out(products);
